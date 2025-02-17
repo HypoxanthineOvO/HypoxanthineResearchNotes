@@ -1,0 +1,21 @@
+{
+  "editor:toggle-source": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "/"
+    }
+  ],
+  "file-explorer:new-file-in-new-pane": [],
+  "easy-typing-obsidian:easy-typing-insert-codeblock": [],
+  "editor:insert-mathblock": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "M"
+    }
+  ]
+}

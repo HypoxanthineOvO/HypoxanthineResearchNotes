@@ -1,0 +1,812 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>NGP Renderer</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cda53d2c-0af1-42e0-bb0c-bbc12c9b6a76" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/photo-landscape_purple.svg"/></div><h1 class="page-title">NGP Renderer</h1><p class="page-description"></p></header><div class="page-body"><h1 id="e662d760-492c-4f92-9fc5-c11df722fc98" class="">我草</h1><p id="33cdca49-8d64-4497-a6df-55b0c95946a6" class="">NGP 的 样例图片并非直接读取的 <code>r_0.png</code></p><p id="8d710d85-60c1-4f8d-a3c8-747347ccc693" class="">或者说，读取之后要把第四个通道乘到前面三个通道里，这NM是个半透明图片</p><p id="6a97d772-80f8-453d-9202-72357508d21a" class="">我的评价是：6</p><p id="28426235-dc79-4647-8ee9-47359a9576de" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="5d559c2b-ab90-4263-a310-748d9e402111"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/exclamation-mark-double_red.svg"/></div><div style="width:100%">重要：精度问题</div></figure><p id="f5f607f3-4669-4287-8151-8b89d48f94bd" class="">Python 和 CUDA 的精度有所区别（体现在小数点后四位，可能是浮点数表示的原因）</p><p id="dcb7f877-4ec2-4e5e-9cec-2c958b0be5a4" class="">因此，<strong>CUDA 训练 Python 推理 会导致 PSNR 有 2dB 左右的下降</strong></p><ul id="8de20d1f-cb26-4d6d-8383-73f2e7171913" class="bulleted-list"><li style="list-style-type:disc">考虑一下，似乎有可能是 float 16 的原因，不太确定，再看看</li></ul><h1 id="93014dac-9843-49b3-8091-be32a36dc8ab" class="">找到问题了</h1><p id="6cd519cc-b90f-43a3-bfd6-2b4dbf636847" class="">是相机方案的问题</p><p id="a2c2d2a5-97db-421d-a88c-c3181fabef74" class="">钧然的代码里的方案是正确的，两个方法在 direction 上会有误差</p><p id="beb31189-1d6d-4696-a805-7a9355cab771" class="">然后对像素位置做一个调整即可</p><h1 id="16071a50-82d2-4e2a-9b30-2b59e83794d2" class="">Introduction</h1><p id="1dc90280-b685-44fe-af9d-5da38389a172" class="">Python + tiny-cuda-nn 实现 Instant NGP 的推理部分</p><h1 id="446204f7-e39e-407e-9f0a-002c93d55714" class="">Modules 实现细节</h1><h2 id="990f88d2-dec8-43f8-8a74-3fa049f27218" class="">超参数部分</h2><p id="10bbec5e-2249-4fe9-a46b-5db6f0d4d2df" class="">原版 NGP 还有 SPP 参数，值得注意</p><h2 id="3956a1d1-6725-46c8-a152-6f20584b2be0" class="">Camera 部分</h2><p id="e37739cc-374b-4efb-b715-51ddb56b6c7a" class="">Camera 部分主要参考的是 <code>nerf-pytorch</code> 。但是，NGP 在细节上做了很多修改。</p><p id="db3ca59d-027a-417a-9eed-7019a8b998ee" class="">其修改核心有两个部分：</p><ol type="1" id="cb1c1854-165b-418d-b246-9a94d1cfa21a" class="numbered-list" start="1"><li>坐标轴的轮换。<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="04cfcbc2-9745-4e73-a189-09d2b6786edd" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">self.rays_o = self.rays_o[..., [1,2,0]]
+self.rays_d = self.rays_d[..., [1,2,0]]
+# Normalize rays_d
+self.rays_d = self.rays_d / np.linalg.norm(self.rays_d, axis=-1, keepdims=True)</code></pre></li></ol><ol type="1" id="cc9ec06c-f004-46e7-b237-e2da2503ed14" class="numbered-list" start="2"><li>在生成采样点的时候的 scale。<ul id="6bb68d1a-5e76-4684-bd2b-0c64c789571b" class="bulleted-list"><li style="list-style-type:disc">对于 Density Grid，其 Scale 为 <code>position[0] * scales[scene] * 2 + 0.5)</code></li></ul><ul id="2ac5f87a-ec75-48a3-8967-1696aa177f93" class="bulleted-list"><li style="list-style-type:disc">对于 Hash Grid，其 Scale 为 <code>position * scales[scene] + 0.5</code></li></ul><ul id="f78a1b1f-53cb-459c-a0c6-d75a9c25a2cf" class="bulleted-list"><li style="list-style-type:disc">Scale 数值基本为 <code>0.33</code> ，但 比较奇怪的 Drums 是 <code>0.3</code></li></ul></li></ol><p id="7ee3dcb4-d7b7-4b88-b019-166fcbb79f4a" class="">
+</p><h2 id="b2bbe30f-5c14-4f8e-8a81-59da68addc14" class="">Ray Marching</h2><figure id="dcabfc68-1525-412a-aa5e-4eae13c68b18" class="link-to-page"><a href="NGP%20Renderer%20cda53d2c0af142e0bb0cbbc12c9b6a76/Ray%20Marching%20%E9%83%A8%E5%88%86%20dcabfc681525412aaa5e4eae13c68b18.html"><span class="icon">☀️</span>Ray Marching 部分</a></figure><figure id="0248a1e1-e5c8-41b8-87b6-60c245fe5433" class="link-to-page"><a href="NGP%20Renderer%20cda53d2c0af142e0bb0cbbc12c9b6a76/NGP%20%E9%99%84%E5%BD%95%20C%200248a1e1e5c841b887b660c245fe5433.html"><img class="icon" src="https://www.notion.so/icons/movie-clapboard_brown.svg"/>NGP 附录 C</a></figure><h2 id="03721458-eb57-47d8-af05-a229a370b4bf" class="">Encoder and Networks</h2><ul id="eb3487cc-86e8-468b-8dea-d31fefd6c76a" class="bulleted-list"><li style="list-style-type:disc">参数的加载：<ul id="db0e3f28-5143-43ad-a9c2-2198a446c080" class="bulleted-list"><li style="list-style-type:circle">注意 Create Hash Grid 的时候要指定 <code>&quot;per_level_scale&quot;: 1.38191288</code> <ul id="b8d9dbae-5c7b-4e2f-bb73-d7acfd71ebb1" class="bulleted-list"><li style="list-style-type:square">默认值为 2</li></ul><ul id="b6c8bb6f-6d07-4139-8bf2-a2d6016cb3ff" class="bulleted-list"><li style="list-style-type:square">这个值对应的是 Finest Resolution 1024</li></ul></li></ul><ul id="936f658e-896b-4061-8513-317ede07d1db" class="bulleted-list"><li style="list-style-type:circle">NGP 中 <code>params_binary</code> 的存储顺序：<ul id="d9d995c6-903f-48ab-a914-0ba19195af72" class="bulleted-list"><li style="list-style-type:square"><code>hash_network</code> - <code>rgb_network</code> - <code>hash_grid</code></li></ul></li></ul></li></ul><h2 id="03ce8dc9-abad-4fbb-a999-38f97de8e648" class="">Rendering</h2><p id="63acb93e-199d-45dd-acc7-8472108eaf17" class="">核心是渲染公式所对应的代码。</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="dcc8a3d3-5d78-4c21-adb6-033d77f2efa1" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">Color, Opacity &lt;- (0,0,0), 0
+t &lt;- Init t value
+while(t valid)
+	alpha_raw, rgb_raw &lt;- Computation
+	T = 1 - Opacity
+	alpha = 1 - exp(-exp(alpha_raw) * STEP_SIZE)
+	weight = T * alpha
+	rgb = sigmoid(rgb_raw) * weight
+	Color += rgb
+	t &lt;- next_t</code></pre><h3 id="34ab4ca1-03e9-4247-beba-28c6a1e71a1b" class="">朴素版本的主要部分代码</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a56004dd-eaea-4b39-ace0-14667ce1a87b" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">for i in trange(camera.resolution[0]):
+        for j in range(0, camera.resolution[1], BATCH_SIZE):
+            ray_o = torch.from_numpy(camera.rays_o[i, j: j + BATCH_SIZE]).to(DEVICE)
+            ray_d = torch.from_numpy(camera.rays_d[i, j: j + BATCH_SIZE]).to(DEVICE)
+
+            t = 0.05
+            # Skip the empty ray
+            if isinstance(t, str):
+                continue
+            color = torch.zeros(3, dtype = torch.float32, device = DEVICE)
+            opacity = torch.zeros(1, dtype = torch.float32, device = DEVICE)
+            while (t &lt;= 6.):
+                position = ray_o + t * ray_d
+                if(grid.intersect(position[0] * scales[scene] * 2 + 0.5)):
+                    # Case of we need run
+                    pos_hash = position * scales[scene] + 0.5
+                    hash_feature = hashenc(pos_hash)
+                    sh_feature = shenc((ray_d + 1)/2)
+                    feature = torch.concat([hash_feature, sh_feature], dim = -1)
+
+                    alpha_raw = hash_feature[:, 0]
+                    rgb_raw = rgb_net(feature)
+                    T = 1 - opacity
+                    alpha = 1 - torch.exp(-torch.exp(alpha_raw) * STEP_LENGTH)
+                    weight = T * alpha
+                    rgb = torch.sigmoid(rgb_raw) * weight
+                    opacity += weight
+                    color += rgb[0]
+                    
+                t += STEP_LENGTH
+            camera.image[i, j: j + BATCH_SIZE] = color.cpu().detach().numpy()</code></pre><h3 id="541c0168-ea5d-4270-858c-bd6ae4c90902" class=""><code>grid.intersect</code> 的优化</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="25051c21-a6ea-407d-a70b-ce659c791653" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def intersect(self, points):
+        idxs = torch.sum(
+            torch.floor(
+                (points - self.aabb[0]) / (self.aabb[1] - self.aabb[0]) * 128) 
+                * 
+                torch.tensor([128 * 128, 128, 1], device = points.device
+            ),dim = -1, dtype = torch.int32)
+        
+        # Noticed that: a point out of aabb may map to a index in [0, 128**3)
+        # So we must check by this
+        masks_raw = ((points &gt;= self.aabb[0]) &amp; (points &lt;= self.aabb[1]))
+        masks = torch.all(masks_raw, dim = 1).type(torch.int32)
+        valid_idxs = idxs * masks
+        return self.grid[valid_idxs]</code></pre><h3 id="7904da0a-2360-48ee-8fd6-6ef6258296f3" class="">多像素并行的实现</h3><p id="ecd81c6b-5fb9-4aa6-a46f-b6f892b4c990" class="">主要是展开了图片的存储，以及修改了 mask 的实现</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3c10fb6b-a370-4931-844f-d49a45834392" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">pixels = camera.resolution[0] * camera.resolution[1]
+    for pixel_index in trange(0, pixels, BATCH_SIZE):
+        BATCH = min(BATCH_SIZE, pixels - pixel_index)
+        ray_o = torch.from_numpy(camera.rays_o[pixel_index: pixel_index + BATCH]).to(DEVICE)
+        ray_d = torch.from_numpy(camera.rays_d[pixel_index: pixel_index + BATCH]).to(DEVICE)
+
+        &quot;&quot;&quot;
+        Naive Ray Marching
+        &quot;&quot;&quot; 
+        t = NEAR_DISTANCE
+        color = torch.zeros([BATCH, 3], dtype = torch.float32, device = DEVICE)
+        opacity = torch.zeros([BATCH, 1], dtype = torch.float32, device = DEVICE)
+        while (t &lt;= FAR_DISTANCE):
+            position = ray_o + t * ray_d
+            #if(grid.intersect(position[0] * 2 + 0.5)):
+            masks = grid.intersect(position * 2 + 0.5).reshape((-1, 1))
+            # Case of we need run
+            pos_hash = position + 0.5
+            hash_feature = hashenc(pos_hash)
+            sh_feature = shenc((ray_d + 1)/2)
+            feature = torch.concat([hash_feature, sh_feature], dim = -1)
+
+            alpha_raw = hash_feature[:, 0:1]
+            rgb_raw = rgb_net(feature)
+            T = 1 - opacity
+            alpha = 1 - torch.exp(-torch.exp(alpha_raw) * STEP_LENGTH)
+            
+            weight = T * alpha * masks
+            rgb = torch.sigmoid(rgb_raw) * weight
+            
+            opacity += weight
+            color += rgb
+                
+            t += STEP_LENGTH
+
+        camera.image[pixel_index: pixel_index + BATCH_SIZE] = color.cpu().detach().numpy()</code></pre><p id="8f7b118f-07a9-4c3f-bc9b-6927fb0608c3" class="">这个版本比单光线的并行快了一倍多点，但影响不大，都是一个量级的</p><h3 id="b534fae1-6f0f-4d3e-9ff8-88f1f717704a" class="">单光线上并行渲染的代码</h3><p id="4f959d0a-894b-414c-8dfa-36ee78e12db1" class="">这个代码的核心是<strong>把对 </strong><strong><code>opacity</code></strong><strong> 的累加变成用 </strong><strong><code>torch.cumprod</code></strong><strong> 的并行操作</strong></p><p id="0f42e202-3070-41db-96d8-e56b4e5861d4" class="">我自己的轮子 <code>cumprod_exclusive</code> 需要的输入是<strong>一维向量</strong>，但给进去的 <code>alpha</code> 一般是 <code>(counts, 1)</code> 形状的向量，从而导致累加出来的结果是错误的。</p><p id="c340b9d7-9f2b-4493-baf5-0088b9da1167" class="">因此在这里重新实现了对于 NGP 的 <code>cumprod</code></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="49191b07-373c-4734-9274-f561c5b5c85b" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def cumprod_exclusive_ngp(tensor: torch.Tensor) -&gt; torch.Tensor:
+    ### Support for my implementation
+    in_shape = (tensor.shape[0],)
+    out_shape = (tensor.shape[0], 1)
+    tensor = tensor.reshape(in_shape)
+    # Only works for the last dimension (dim=-1)
+    dim = -1
+    # Compute regular cumprod first (this is equivalent to `tf.math.cumprod(..., exclusive=False)`).
+    cumprod = torch.cumprod(tensor, dim)
+    # &quot;Roll&quot; the elements along dimension &#x27;dim&#x27; by 1 element.
+    cumprod = torch.roll(cumprod, 1, dim)
+    # Replace the first element by &quot;1&quot; as this is what tf.cumprod(..., exclusive=True) does.
+    cumprod[..., 0] = 1.0
+
+    return cumprod.reshape(out_shape)</code></pre><p id="75cee7cf-c42e-4b01-a817-f4d7f0b4c232" class="">并行部分的结构就是：</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4d9c05f2-cfd7-4c0c-a1b1-423f90c98634" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">ts = torch.reshape(torch.linspace(NEAR_DISTANCE, FAR_DISTANCE, NERF_STEPS, device = DEVICE), (-1, 1))
+        pts = ray_o + ts * ray_d
+        occupancy = grid.intersect(pts * 2 + 0.5)
+        if(torch.sum(occupancy) == 0):
+            continue
+        color = torch.zeros([BATCH, 3], dtype = torch.float32, device = DEVICE)
+        opacity = torch.zeros([BATCH, 1], dtype = torch.float32, device = DEVICE)
+        pts_truth = pts[torch.where(occupancy)]
+
+        hash_features = hashenc(pts_truth + 0.5)
+        sh_features = torch.tile(shenc((ray_d+1) / 2), (hash_features.shape[0], 1))
+        features = torch.concat([hash_features, sh_features], dim = -1)
+
+        alphas_raw = hash_features[..., 0:1]
+        rgbs_raw = rgb_net(features)
+        alphas = (1. - torch.exp(-torch.exp(alphas_raw) * STEP_LENGTH))
+        
+        # Cumprod_exclusive need a 1D array input!
+        weights = alphas * cumprod_exclusive_ngp((1. - alphas)) 
+        colors = weights * torch.sigmoid(rgbs_raw)
+        para_color = torch.sum(colors, dim = -2)
+        camera.image[pixel_index] = para_color.cpu().detach().numpy()</code></pre><h1 id="f0961d2b-cc19-48a3-aefa-21bfe05bcb3d" class="">工作进度与计划</h1><h2 id="5556cd2c-6e58-4e0a-8c19-4b741b91f0ca" class="">7.10</h2><ul id="771a7b45-2eac-463d-821c-dd85b309c38a" class="bulleted-list"><li style="list-style-type:disc">了解 TCNN 的调用方式</li></ul><h2 id="e42fd255-6bae-44b9-890a-3c2f39976246" class="">7.15</h2><ul id="d21f11a0-d300-472a-a808-759a2366c553" class="bulleted-list"><li style="list-style-type:disc">实现了最简单的 Pipeline</li></ul><ul id="b8addde3-1822-4696-b25f-fa865d903cee" class="bulleted-list"><li style="list-style-type:disc">调用参数数量和 NGP 不同</li></ul><h2 id="4d469984-2b1f-414e-b0d4-daa84062c620" class="">7.17</h2><ul id="eeaf1194-8fcd-4de4-a584-eddea6c01110" class="bulleted-list"><li style="list-style-type:disc">找到了 TCNN 参数量的问题</li></ul><h2 id="29f7e9aa-f6d9-47eb-b58d-c9ba07bddf08" class="">7.18</h2><ul id="03717c6d-5683-458f-8e89-2e06663e221e" class="bulleted-list"><li style="list-style-type:disc">正确 Load 了 TCNN 的参数</li></ul><ul id="9fbd4244-9906-4a19-b2f4-dae4c2d1d664" class="bulleted-list"><li style="list-style-type:disc">相机位姿不对</li></ul><h2 id="de230935-654a-45ad-9deb-c7680cfdc03d" class="">7.19</h2><ul id="7c18b3de-6c32-48e8-9416-0c6dc92e2805" class="bulleted-list"><li style="list-style-type:disc">调整好了相机位姿的问题，现在和 Occupancy Grid 的相交图像基本正确</li></ul><ul id="60ae7f3c-a2f6-4dbe-abe7-8d1a3a0509fe" class="bulleted-list"><li style="list-style-type:disc">但是 采样点的位置不变</li></ul><h2 id="63d1258a-a125-4015-97ab-d3065d5290a2" class="">7.20</h2><ul id="75b27c2a-a7cf-4f77-bcc3-9a3d84fe0038" class="bulleted-list"><li style="list-style-type:disc">开始做采样点位置的测试<figure id="2aef9088-10ee-4214-a8c1-180f910bd593" class="link-to-page"><a href="NGP%20Renderer%20cda53d2c0af142e0bb0cbbc12c9b6a76/ray%20test%202aef908810ee4214a8c1180f910bd593.html">ray test</a></figure><ul id="4efa9eeb-fbd5-43bb-a637-db772154186b" class="bulleted-list"><li style="list-style-type:circle">确定 Load 进来的 Hash Table 和 Network 都是没有问题的，输入正确则输出正确</li></ul><ul id="ef95a136-ce8d-4da2-baf9-cddc3a752844" class="bulleted-list"><li style="list-style-type:circle">但是意识到：<ul id="16dfb82a-7fa9-4d2a-a1ac-d972e4377e6a" class="bulleted-list"><li style="list-style-type:square">Camera 生成的采样点也得调整</li></ul><ul id="2d7f5932-95e4-4244-bac0-2a506c00ecd8" class="bulleted-list"><li style="list-style-type:square">得完整的写一版 Ray Marching</li></ul><ul id="1e72fc9e-6081-421a-9903-636c8158072b" class="bulleted-list"><li style="list-style-type:square">所有的 输出 都要过 Sigmoid 或者 ReLU，Rendering 公式可能也要调整</li></ul></li></ul></li></ul><ul id="51789588-ade1-41ef-8d28-d15f6046441a" class="bulleted-list"><li style="list-style-type:disc">Camera 的光线生成问题基本上也解决了，现在对应点的误差小于 <code>5e-4</code></li></ul><h2 id="fc257620-5668-4426-9fc4-90f7bde1bb5f" class="">7.21</h2><ul id="97538096-a38d-4684-a999-9b329d26296b" class="bulleted-list"><li style="list-style-type:disc">开始实现 Ray Marching</li></ul><ul id="6f9e91eb-cb9a-4ce2-86d0-f28cc8ec53ef" class="bulleted-list"><li style="list-style-type:disc">折戟沉沙.jpg</li></ul><ul id="d164fd69-c38e-4429-84f9-e7159920a5ba" class="bulleted-list"><li style="list-style-type:disc">不过传入的 SH 方向好像确实需要变成 <code>(ray_d+1)/2</code></li></ul><h2 id="7133481d-2b8e-4c59-856d-c6183b6d95d9" class="">7.22</h2><ul id="1d9db87d-c6c6-4b7f-80a7-d9dde4676433" class="bulleted-list"><li style="list-style-type:disc">探究 Ray Marching 的 奥秘</li></ul><ul id="ab00cac4-e345-438d-a9fd-60f155ed3387" class="bulleted-list"><li style="list-style-type:disc">感觉不是这个的问题</li></ul><h2 id="c987db09-43bb-4265-b42c-d159d549a50b" class="">7.23</h2><ul id="8041679e-5f77-4cb2-a102-d6bd76497fcc" class="bulleted-list"><li style="list-style-type:disc">核心问题是 两个位置似乎不对应</li></ul><ul id="c38cb6c3-0e33-4bf7-88b2-e384d36c8879" class="bulleted-list"><li style="list-style-type:disc">得把传入哈希表的scale一下 才能对应</li></ul><ul id="5fb004db-a7a4-4d70-9a7b-66e8abb92df1" class="bulleted-list"><li style="list-style-type:disc">已经能跑出看起来正确的图了</li></ul><h2 id="22d74c3c-65fc-4a57-b612-b1fc7e3dc9b4" class="">7.24</h2><ul id="98765db1-ba2f-484f-811b-5abc7723126c" class="bulleted-list"><li style="list-style-type:disc">跑出来了！</li></ul><ul id="ceabfb75-1095-4981-91d6-9b17f7ba5399" class="bulleted-list"><li style="list-style-type:disc">整理代码并开源</li></ul><h2 id="6c52eadf-1a6b-46c9-9fb4-b6b80644ebb8" class="">7.31</h2><ul id="f23d12f7-5cda-4df3-baf4-e9f76842234b" class="bulleted-list"><li style="list-style-type:disc">想到可以多像素并行实现</li></ul><h2 id="524974c6-7028-4fa7-b88a-aab4e3e9b251" class="">8.1</h2><ul id="e8ee85e9-78a4-45a0-8917-d35e29cef96c" class="bulleted-list"><li style="list-style-type:disc">实现了多像素并行</li></ul><ul id="ed2e0081-c490-46f7-9363-0e846c76f6be" class="bulleted-list"><li style="list-style-type:disc">40s 一张 800x800 的图</li></ul><ul id="b99503be-50dc-442d-b586-8288d9121bbf" class="bulleted-list"><li style="list-style-type:disc">但是质量好像低点，不知道是不是没有超采样？</li></ul><h2 id="ea0eae5d-a000-4561-9a93-8802a9b997ab" class="">8.3</h2><ul id="3b0c4e47-e360-4183-ac7c-87554f93c7e9" class="bulleted-list"><li style="list-style-type:disc">思考一下，在做新实验的时候还是得逐光线并行</li></ul><ul id="2c12b61f-3cd6-4ffd-8af8-fd9761f1e7d5" class="bulleted-list"><li style="list-style-type:disc">研究一下为什么逐光线并行有问题</li></ul><h2 id="64e543c6-3e64-436f-956d-894c79e48197" class="">8.4</h2><ul id="3fde1317-5525-4825-b6b0-03c0d87bb3bd" class="bulleted-list"><li style="list-style-type:disc">找到逐光线并行的错误了！</li></ul><ul id="40e1c8fc-b15f-4dad-92af-ffe584e0a8b6" class="bulleted-list"><li style="list-style-type:disc">完成了逐光线并行</li></ul><h2 id="9193b904-db77-423c-aa00-c584fb66dd8b" class="">8.5</h2><ul id="473a4dfb-fdb8-454e-b854-91dc69134cd0" class="bulleted-list"><li style="list-style-type:disc">写了一版 Naive 的新方法，但是质量有问题</li></ul><h2 id="2a93c73d-30c4-45ae-bacd-13fb20f4e60f" class="">8.7</h2><ul id="17c07c62-e038-423a-a31a-f30ac7615cb4" class="bulleted-list"><li style="list-style-type:disc">新方法为什么会有问题呢？按理来说应该只是把采样范围变大了啊</li></ul><ul id="e372aa17-39a8-4547-b570-8556758de2fe" class="bulleted-list"><li style="list-style-type:disc">原来是范围设定有问题，并且步长要匹配</li></ul><h2 id="b4f298c2-0f4b-446e-9ac0-82e011de4cea" class="">8.8</h2><ul id="c4affe46-11cb-42ee-896e-c61cdbf2d286" class="bulleted-list"><li style="list-style-type:disc">试着用超采样处理复现方法 PSNR 低了两个 dB 的问题</li></ul><ul id="959a0850-360e-41ef-bbb7-40144561ad1f" class="bulleted-list"><li style="list-style-type:disc">调好了新方法，并且发现自己之前的想法太麻烦了，优化</li></ul><p id="4925252a-545c-4592-9208-6034048adcf9" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
