@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02-论文笔记/SuperResolution（超分辨率）/1-CNN-Based-Method.md",
+                "file": "01-我的科研日志/2025-上半年/Week 01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1-CNN-Based-Method"
+              "title": "Week 01"
             }
           }
         ]
@@ -193,8 +193,12 @@
   },
   "active": "ae38f603811878f3",
   "lastOpenFiles": [
-    "01-我的科研日志/2025-上半年/Week 01.md",
     "02-论文笔记/SuperResolution（超分辨率）/1-CNN-Based-Method.md",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/1-02-ESPCN.md",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/1-01-SRCNN.md",
+    "02-论文笔记/SuperResolution（超分辨率）/png/1-CNN-Based-Method-001.png",
+    "02-论文笔记/SuperResolution（超分辨率）/png",
+    "01-我的科研日志/2025-上半年/Week 01.md",
     "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
     "04-项目记录/02-MICRO&TCSVT-with钧然/环境与代码配置.md",
     "04-项目记录/02-MICRO&TCSVT-with钧然/数据整理.md",
@@ -210,7 +214,6 @@
     "02-论文笔记/SuperResolution（超分辨率）/2-ResNet-Based-Method.md",
     "02-论文笔记/SuperResolution（超分辨率）/3-GAN-Based-Method.md",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-001.png",
-    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/1-01-SRCNN.md",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-006.png",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-005.png",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-004.png",
@@ -224,7 +227,6 @@
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 7.png",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 6.png",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 5.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 4.png",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：NeuRex/images",
@@ -232,12 +234,10 @@
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Cambricon-R/images",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Cambricon-R",
     "02-论文笔记/NeuralRendering（神经渲染）/RobustNeRF/RobustNeRF.md",
-    "02-论文笔记/NeuralRendering（神经渲染）/RobustNeRF/images",
     "02-论文笔记/NeuralRendering（神经渲染）/3D Gaussian Splatting for Real-time Radiance Field Rendering/3D Gaussian Splatting for Real-time Radiance Field Rendering.md",
     "03-工具笔记/Nsight Compute.md",
     "02-论文笔记/NeuralRendering/FreeNeRF.md",
     "02-论文笔记/NeuralRendering/Notion/NeRF Paper Reading.md",
-    "02-论文笔记/NeuralRendering/Notion/竞品：RT-NeRF.md",
-    "02-论文笔记/NeuralRendering/Notion/2. 向量空间.md"
+    "02-论文笔记/NeuralRendering/Notion/竞品：RT-NeRF.md"
   ]
 }
