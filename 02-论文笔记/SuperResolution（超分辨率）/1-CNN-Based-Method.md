@@ -71,7 +71,7 @@ debugInConsole: false # Print debug info in Obsidian console
    - **速度指标**：单图处理时间（CPU/GPU）。
 
 ## 简单评价
- 
+ SRCNN 也太朴素了，就是设计了一个 CNN 对图像进行优化，从现在的角度来看，当时应该是不能确定这种方法 Work，并且缺乏框架（必须手动实现全流程），但实际上 Idea 难度并不大
 
 
 ---
@@ -83,5 +83,4 @@ debugInConsole: false # Print debug info in Obsidian console
 
 # 1.5. MSFIN
 
-# 
 
