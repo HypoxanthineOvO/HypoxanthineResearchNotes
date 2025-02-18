@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "10aa8803319691f4",
+            "id": "ae38f603811878f3",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
+                "file": "01-我的科研日志/2025-上半年/Week 01.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: workspace.json"
-            }
-          },
-          {
-            "id": "bdb7a4a648ec99a3",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: workspace.json"
+              "icon": "lucide-file",
+              "title": "Week 01"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -119,6 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "01-我的科研日志/2025-上半年/Week 01.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "Week 01 的反向链接列表"
             }
           },
           {
@@ -137,11 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "01-我的科研日志/2025-上半年/Week 01.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "Week 01 的出链列表"
             }
           },
           {
@@ -165,16 +152,17 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "01-我的科研日志/2025-上半年/Week 01.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Week 01 的大纲"
             }
           },
           {
-            "id": "7804a1deaf0fc99b",
+            "id": "609236704fdafaef",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -196,61 +184,60 @@
       "graph:查看关系图谱": false,
       "canvas:新建白板": true,
       "daily-notes:打开/创建今天的日记": true,
-      "templates:插入模板": false,
       "command-palette:打开命令面板": false,
+      "workspaces:管理工作区布局": false,
       "obsidian-importer:Open Importer": false,
       "templater-obsidian:Templater": false,
-      "workspaces:管理工作区布局": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bdb7a4a648ec99a3",
+  "active": "ae38f603811878f3",
   "lastOpenFiles": [
-    "02-论文笔记/SuperResolution（超分辨率）/00-SuperResolution Overview.md",
-    "02-论文笔记/NeuralRendering（神经渲染）/Neural Rendering Paper Reading.md",
-    "02-论文笔记/SuperResolution（超分辨率）/01-SRCNN.md",
+    "02-论文笔记/SuperResolution（超分辨率）/1-CNN-Based-Method.md",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/1-02-ESPCN.md",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/1-01-SRCNN.md",
+    "02-论文笔记/SuperResolution（超分辨率）/png/1-CNN-Based-Method-001.png",
+    "02-论文笔记/SuperResolution（超分辨率）/png",
     "01-我的科研日志/2025-上半年/Week 01.md",
+    "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
+    "04-项目记录/02-MICRO&TCSVT-with钧然/环境与代码配置.md",
+    "04-项目记录/02-MICRO&TCSVT-with钧然/数据整理.md",
+    "04-项目记录/01-TCASI-with康杰/新版代码和实验结果.md",
+    "04-项目记录/01-TCASI-with康杰/量化方法理解.md",
+    "04-项目记录/01-TCASI-with康杰/旧版量化数据整理.md",
+    "02-论文笔记/NeuralRendering（神经渲染）/Neural Rendering Paper Reading.md",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：RT-NeRF/竞品：RT-NeRF.md",
     "02-论文笔记/NeuralRendering（神经渲染）/NeRF 算法导读.md",
+    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Cambricon-R/竞品：Cambricon-R.md",
+    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/竞品：Instant-3D.md",
+    "02-论文笔记/SuperResolution（超分辨率）/前沿工作整理.md",
+    "02-论文笔记/SuperResolution（超分辨率）/2-ResNet-Based-Method.md",
+    "02-论文笔记/SuperResolution（超分辨率）/3-GAN-Based-Method.md",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-001.png",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-006.png",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-005.png",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-004.png",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-003.png",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-002.png",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png",
+    "02-论文笔记/NeuralRendering（神经渲染）/竞品：NeuRex/竞品：NeuRex.md",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理",
     "02-论文笔记/SuperResolution（超分辨率）",
     "Hypoxanthine 的科研日记.md",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 7.png",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 6.png",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 5.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 4.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 3.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 2.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 1.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/竞品：Instant-3D.md",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：NeuRex/images/Untitled 17.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：NeuRex/images/Untitled 16.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：NeuRex/竞品：NeuRex.md",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：NeuRex/images",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：NeuRex",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Cambricon-R/竞品：Cambricon-R.md",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Cambricon-R/images",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Cambricon-R",
     "02-论文笔记/NeuralRendering（神经渲染）/RobustNeRF/RobustNeRF.md",
-    "02-论文笔记/NeuralRendering（神经渲染）/RobustNeRF/images",
-    "02-论文笔记/NeuralRendering（神经渲染）/RobustNeRF",
     "02-论文笔记/NeuralRendering（神经渲染）/3D Gaussian Splatting for Real-time Radiance Field Rendering/3D Gaussian Splatting for Real-time Radiance Field Rendering.md",
-    "02-论文笔记/NeuralRendering（神经渲染）/3D Gaussian Splatting for Real-time Radiance Field Rendering/images",
     "03-工具笔记/Nsight Compute.md",
     "02-论文笔记/NeuralRendering/FreeNeRF.md",
     "02-论文笔记/NeuralRendering/Notion/NeRF Paper Reading.md",
-    "02-论文笔记/NeuralRendering/Notion/竞品：RT-NeRF.md",
-    "02-论文笔记/NeuralRendering/Notion/2. 向量空间.md",
-    "02-论文笔记/NeuralRendering/Notion/2. 向量空间 2.md",
-    "02-论文笔记/NeuralRendering/Notion/1. HydraNet.md",
-    "04-项目记录/03-NGP系列ModelingCode/NGP Renderer/NGP Renderer.md",
-    "02-论文笔记/NeuralRendering/Notion/Tesla AI Day 2022 - 万字解读 2.md",
-    "02-论文笔记/NeuralRendering/Notion/3. 规划与控制 2.md",
-    "02-论文笔记/NeuralRendering/Notion/1. HydraNet 2.md",
-    "02-论文笔记/NeuralRendering/Notion/Tesla AI Day 2022 - 万字解读.md",
-    "02-论文笔记/NeuralRendering/Notion/3. 规划与控制.md",
-    "02-论文笔记/NeuralRendering/Notion/Untitled 2.md"
+    "02-论文笔记/NeuralRendering/Notion/竞品：RT-NeRF.md"
   ]
 }

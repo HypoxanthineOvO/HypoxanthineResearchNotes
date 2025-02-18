@@ -1,3 +1,9 @@
+---
+tags:
+  - NR
+  - Co-Design
+---
+
 > [!important] Real-Time On-Device Neural Radiance Fields Towards Immersive AR/VR Rendering
 
 # Abstract

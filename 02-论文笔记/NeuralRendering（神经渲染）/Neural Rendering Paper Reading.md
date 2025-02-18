@@ -1,3 +1,8 @@
+---
+tags:
+  - NR
+---
+
 # NeRF-Based
 [[NeRF 算法导读]]
 ## Performance Optimization
