@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "d6e5b6d9ef46808a",
+        "id": "a4e6f574f6cda3de",
         "type": "tabs",
         "children": [
           {
-            "id": "ae38f603811878f3",
+            "id": "10aa8803319691f4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "01-我的科研日志/2025-上半年/Week 01.md",
-                "mode": "source",
-                "source": false
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "Week 01"
+              "icon": "diff",
+              "title": "Diff: workspace.json"
+            }
+          },
+          {
+            "id": "bdb7a4a648ec99a3",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: workspace.json"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -104,7 +119,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01-我的科研日志/2025-上半年/Week 01.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +128,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Week 01 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -123,12 +137,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01-我的科研日志/2025-上半年/Week 01.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Week 01 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -152,21 +165,30 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-我的科研日志/2025-上半年/Week 01.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Week 01 的大纲"
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "7804a1deaf0fc99b",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,14 +204,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b60cdf2095daaa4d",
+  "active": "bdb7a4a648ec99a3",
   "lastOpenFiles": [
-    "02-论文笔记/SuperResolution（超分辨率）/01-SRCNN.md",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：RT-NeRF/竞品：RT-NeRF.md",
-    "02-论文笔记/NeuralRendering（神经渲染）/Neural Rendering Paper Reading.md",
-    "02-论文笔记/NeuralRendering（神经渲染）/NeRF 算法导读.md",
     "02-论文笔记/SuperResolution（超分辨率）/00-SuperResolution Overview.md",
+    "02-论文笔记/NeuralRendering（神经渲染）/Neural Rendering Paper Reading.md",
+    "02-论文笔记/SuperResolution（超分辨率）/01-SRCNN.md",
     "01-我的科研日志/2025-上半年/Week 01.md",
+    "02-论文笔记/NeuralRendering（神经渲染）/竞品：RT-NeRF/竞品：RT-NeRF.md",
+    "02-论文笔记/NeuralRendering（神经渲染）/NeRF 算法导读.md",
     "02-论文笔记/SuperResolution（超分辨率）",
     "Hypoxanthine 的科研日记.md",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 7.png",
