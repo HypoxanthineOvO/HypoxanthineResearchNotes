@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-我的科研日志/2025-上半年/Week 01.md",
+                "file": "02-论文笔记/SuperResolution（超分辨率）/1-CNN-Based-Method.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week 01"
+              "title": "1-CNN-Based-Method"
             }
           }
         ]
@@ -193,9 +193,9 @@
   },
   "active": "ae38f603811878f3",
   "lastOpenFiles": [
+    "01-我的科研日志/2025-上半年/Week 01.md",
     "02-论文笔记/SuperResolution（超分辨率）/1-CNN-Based-Method.md",
     "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
-    "01-我的科研日志/2025-上半年/Week 01.md",
     "04-项目记录/02-MICRO&TCSVT-with钧然/环境与代码配置.md",
     "04-项目记录/02-MICRO&TCSVT-with钧然/数据整理.md",
     "04-项目记录/01-TCASI-with康杰/新版代码和实验结果.md",

@@ -77,6 +77,7 @@ debugInConsole: false # Print debug info in Obsidian console
 ---
 # 1.2. ESPCN
 
+
 # 1.3. RCAN
 
 # 1.4. HAN
