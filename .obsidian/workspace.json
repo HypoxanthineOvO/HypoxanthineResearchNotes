@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "a4e6f574f6cda3de",
+        "id": "030615001a988f7b",
         "type": "tabs",
         "children": [
           {
-            "id": "10aa8803319691f4",
+            "id": "819bcc0437e34bfd",
             "type": "leaf",
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
+                "aFile": ".obsidian/plugins/image-converter/image-converter-image-alignments.json",
+                "bFile": ".obsidian/plugins/image-converter/image-converter-image-alignments.json",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: workspace.json"
-            }
-          },
-          {
-            "id": "bdb7a4a648ec99a3",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: workspace.json"
+              "title": "Diff: image-converter-image-alignments.json"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -204,10 +189,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bdb7a4a648ec99a3",
+  "active": "819bcc0437e34bfd",
   "lastOpenFiles": [
-    "01-我的科研日志/2025-上半年/Week 01.md",
     "02-论文笔记/SuperResolution（超分辨率）/1-CNN-Based-Method.md",
+    "02-论文笔记/SuperResolution（超分辨率）/2-ResNet-Based-Method.md",
+    "01-我的科研日志/2025-上半年/Week 01.md",
     "conflict-files-obsidian-git.md",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-006.png",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-005.png",
@@ -223,7 +209,6 @@
     "02-论文笔记/SuperResolution（超分辨率）/png/1-CNN-Based-Method-001.png",
     "02-论文笔记/SuperResolution（超分辨率）/png",
     "02-论文笔记/SuperResolution（超分辨率）/3-GAN-Based-Method.md",
-    "02-论文笔记/SuperResolution（超分辨率）/2-ResNet-Based-Method.md",
     "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
     "02-论文笔记/SuperResolution（超分辨率）/00-SuperResolution Overview.md",
     "02-论文笔记/NeuralRendering（神经渲染）/Neural Rendering Paper Reading.md",
