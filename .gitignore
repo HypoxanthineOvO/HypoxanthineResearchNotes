@@ -1,0 +1,6 @@
+# 保留插件和主题，忽略状态文件
+.obsidian/*
+!.obsidian/plugins/
+!.obsidian/themes/
+!.obsidian/theme.css
+!.obsidian/appearance.json
