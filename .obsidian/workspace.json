@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "a4e6f574f6cda3de",
+        "id": "c1110b63157c5905",
         "type": "tabs",
         "children": [
           {
-            "id": "10aa8803319691f4",
+            "id": "e66cc821bb689194",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
+                "file": "01-我的科研日志/2025-上半年/Week 01.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: workspace.json"
-            }
-          },
-          {
-            "id": "bdb7a4a648ec99a3",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: workspace.json"
+              "icon": "lucide-file",
+              "title": "Week 01"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -196,7 +181,6 @@
       "graph:查看关系图谱": false,
       "canvas:新建白板": true,
       "daily-notes:打开/创建今天的日记": true,
-      "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "obsidian-importer:Open Importer": false,
       "templater-obsidian:Templater": false,
@@ -204,10 +188,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bdb7a4a648ec99a3",
+  "active": "e66cc821bb689194",
   "lastOpenFiles": [
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/2-01-VDSR.md",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/2-01-VDSR-001.png",
     "01-我的科研日志/2025-上半年/Week 01.md",
     "02-论文笔记/SuperResolution（超分辨率）/1-CNN-Based-Method.md",
+    "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
+    "02-论文笔记/SuperResolution（超分辨率）/3-GAN-Based-Method.md",
+    "02-论文笔记/SuperResolution（超分辨率）/前沿工作整理.md",
     "conflict-files-obsidian-git.md",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-006.png",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/1-01-SRCNN-005.png",
@@ -219,12 +208,9 @@
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/1-02-ESPCN.md",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/1-01-SRCNN.md",
     "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理",
-    "02-论文笔记/SuperResolution（超分辨率）/前沿工作整理.md",
     "02-论文笔记/SuperResolution（超分辨率）/png/1-CNN-Based-Method-001.png",
     "02-论文笔记/SuperResolution（超分辨率）/png",
-    "02-论文笔记/SuperResolution（超分辨率）/3-GAN-Based-Method.md",
     "02-论文笔记/SuperResolution（超分辨率）/2-ResNet-Based-Method.md",
-    "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
     "02-论文笔记/SuperResolution（超分辨率）/00-SuperResolution Overview.md",
     "02-论文笔记/NeuralRendering（神经渲染）/Neural Rendering Paper Reading.md",
     "02-论文笔记/SuperResolution（超分辨率）/01-SRCNN.md",
@@ -234,7 +220,6 @@
     "Hypoxanthine 的科研日记.md",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 7.png",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 6.png",
-    "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images/Untitled 5.png",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/竞品：Instant-3D.md",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D/images",
     "02-论文笔记/NeuralRendering（神经渲染）/竞品：Instant-3D",
@@ -249,8 +234,6 @@
     "03-工具笔记/Nsight Compute.md",
     "02-论文笔记/NeuralRendering/FreeNeRF.md",
     "02-论文笔记/NeuralRendering/Notion/NeRF Paper Reading.md",
-    "02-论文笔记/NeuralRendering/Notion/竞品：RT-NeRF.md",
-    "02-论文笔记/NeuralRendering/Notion/2. 向量空间.md",
-    "02-论文笔记/NeuralRendering/Notion/2. 向量空间 2.md"
+    "02-论文笔记/NeuralRendering/Notion/竞品：RT-NeRF.md"
   ]
 }
