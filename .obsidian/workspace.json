@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "030615001a988f7b",
+        "id": "827ed1564911ed21",
         "type": "tabs",
         "children": [
           {
-            "id": "819bcc0437e34bfd",
+            "id": "1f4884aeb08b3cb1",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/plugins/image-converter/image-converter-image-alignments.json",
-                "bFile": ".obsidian/plugins/image-converter/image-converter-image-alignments.json",
-                "aRef": ""
+                "file": "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: image-converter-image-alignments.json"
+              "icon": "lucide-file",
+              "title": "0-SuperResolution-Overview"
             }
           }
         ]
@@ -104,6 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "0-SuperResolution-Overview 的反向链接列表"
             }
           },
           {
@@ -122,11 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "0-SuperResolution-Overview 的出链列表"
             }
           },
           {
@@ -150,12 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "02-论文笔记/SuperResolution（超分辨率）/0-SuperResolution-Overview.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "0-SuperResolution-Overview 的大纲"
             }
           },
           {
@@ -189,8 +192,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "819bcc0437e34bfd",
+  "active": "7804a1deaf0fc99b",
   "lastOpenFiles": [
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/png/2-01-VDSR-001.png",
+    "02-论文笔记/SuperResolution（超分辨率）/论文翻译整理/2-01-VDSR.md",
+    "01-我的科研日志/Before All-科研日志 前言.md",
     "02-论文笔记/SuperResolution（超分辨率）/1-CNN-Based-Method.md",
     "02-论文笔记/SuperResolution（超分辨率）/2-ResNet-Based-Method.md",
     "01-我的科研日志/2025-上半年/Week 01.md",
@@ -233,9 +239,6 @@
     "02-论文笔记/NeuralRendering（神经渲染）/3D Gaussian Splatting for Real-time Radiance Field Rendering/3D Gaussian Splatting for Real-time Radiance Field Rendering.md",
     "03-工具笔记/Nsight Compute.md",
     "02-论文笔记/NeuralRendering/FreeNeRF.md",
-    "02-论文笔记/NeuralRendering/Notion/NeRF Paper Reading.md",
-    "02-论文笔记/NeuralRendering/Notion/竞品：RT-NeRF.md",
-    "02-论文笔记/NeuralRendering/Notion/2. 向量空间.md",
-    "02-论文笔记/NeuralRendering/Notion/2. 向量空间 2.md"
+    "02-论文笔记/NeuralRendering/Notion/NeRF Paper Reading.md"
   ]
 }
