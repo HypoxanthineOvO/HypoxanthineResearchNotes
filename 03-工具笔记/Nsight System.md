@@ -1,0 +1,1 @@
+Nsight System 是 NVIDIA 的一款 Profiling 工具，主要用于对 GPU 的程序总体进行性能分析（e.g. 不同函数的执行时长等）。
