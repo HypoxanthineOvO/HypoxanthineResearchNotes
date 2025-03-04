@@ -41,3 +41,18 @@ Step 3：输出结果。
 如果有自己的光栅 IP，则可以进一步进行优化。
 （属于是走另一个技术路线，相当于高效率的计算？但不知道效果何如，可能更适合元宇宙吧）
 ## 3. 论文写作和绘图
+和娄老师聊的结果基本上是认为现在的版本还非常草率，估计要经过一轮反复迭代才行。
+下一波计划是配合雍治哥先写一版**比特级别的模块模拟器**，然后后续交给雍治哥。
+# 3.4（周二）
+## 1. 浪潮项目时间线
+- C Model 的开发：预计在三月份完成，目标是把一些乱七八糟的 Mesh 和 NGP 混合出现在一张图上。
+- 进一步功能拓展：查询
+## 2. Relighting 论文
+1. **NeRD**
+2. **Relighting neural radiance fields with shadow and highlight hints**
+3. **Nerfactor**: Neural factorization of shape and reflectance under an unknown illumination.
+这周考虑介绍一下我想做的项目和想法好了，主打一个讲故事
+
+# 3.5（周三）
+
+# 3.6（周四）
