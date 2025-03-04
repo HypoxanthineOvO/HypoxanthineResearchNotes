@@ -51,8 +51,24 @@ Step 3：输出结果。
 1. **NeRD**
 2. **Relighting neural radiance fields with shadow and highlight hints**
 3. **Nerfactor**: Neural factorization of shape and reflectance under an unknown illumination.
-这周考虑介绍一下我想做的项目和想法好了，主打一个讲故事
+这周考虑介绍一下我想做的项目和想法好了，主打一个讲故事？
+OR 讲一下基于 CNN 和 Resnet 的超分辨率（介绍一两篇）？到时候强调越往后越多越乱即可。（预告一下下周讲 Graphics 好了）
+## 3. 浮点数运算转换器
+昨天帮忙的时候搞的，感觉可以借此切入一波浮点数？
+不过定点数似乎也有这个需求（看后面有没有人来重构一下功能好了）
+唔，可以拉上雍治哥和超凡哥一起来搞。
 
 # 3.5（周三）
+## 1. 组会准备
+
+## 2. 定点数浮点数仿真项目
+
 
 # 3.6（周四）
+## 1. Reading Group 组会
+
+# 3.7（周五）
+
+# 3.8（周六）
+
+# 3.9（周日）

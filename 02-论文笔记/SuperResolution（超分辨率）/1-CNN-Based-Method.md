@@ -31,7 +31,7 @@ debugInConsole: false # Print debug info in Obsidian console
      3. **重建层（Reconstruction）**：
         - 操作：5×5 卷积聚合高分辨率特征，生成最终输出。
         - 输出：单通道（Y）或三通道（RGB）高分辨率图像。
-  - 可以理解为，本质上就是一组调整了不同 
+  - 可以理解为，本质上就是一组调整了不同配置的卷积在嗯卷。
 
 ### 3. **SRCNN 的实验优势**
    - **定量指标**：
