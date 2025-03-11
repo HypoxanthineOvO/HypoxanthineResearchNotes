@@ -15,6 +15,7 @@
 OK，交代好了
 # 3.11（周二）
 ## 1. 混合渲染器
+准备今天进行 Meeting，分配后续工作。
 
 ## 2. Neural SDF 相关
 主要看 `instant-nsr-pl` 的 Model 里的 236 行附近：
@@ -114,3 +115,12 @@ def forward_(self, rays):
 ```
 
 根据我的 NGP_Trainer 结构，应该也是主要改这一段即可。
+SDF 模型特征：
+1. 输出 SDF，SDF Grad（Normal）和 Feature
+2. Feature 经过 Texture 得到 RGB
+接下来计划读 NeuS 的论文来写代码。
+## 3. ASIC_Sim 浮点数开发
+和 wj & zyk Meeting，交代任务：
+1. 先期的两个工作：修改定点数赋值部分的截断舍入，实现浮点数之间的截断和舍入
+2. 要求先看一遍之前的文档，可以适当对之前的文档内容进行补充测试用例
+3. 完成这两个部分之后可以开始实现浮点数的加减乘除算法，进一步可以有开方等算法

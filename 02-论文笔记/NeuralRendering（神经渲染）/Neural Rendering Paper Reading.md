@@ -15,3 +15,7 @@ tags:
 
 # 3D-Gaussian-Based
 [[3D Gaussian Splatting for Real-time Radiance Field Rendering]]
+# 混合渲染
+[[Dynamic Mesh-Aware Radiance Fields]]
+
+# Neural SDF
