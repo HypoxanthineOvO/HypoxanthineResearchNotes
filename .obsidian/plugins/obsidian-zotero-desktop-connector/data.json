@@ -1,0 +1,27 @@
+{
+  "database": "Zotero",
+  "noteImportFolder": "02-论文笔记/",
+  "pdfExportImageDPI": 120,
+  "pdfExportImageFormat": "png",
+  "pdfExportImageQuality": 90,
+  "citeFormats": [
+    {
+      "name": "Cite",
+      "format": "formatted-bibliography",
+      "cslStyle": "ieee"
+    }
+  ],
+  "exportFormats": [
+    {
+      "name": "a-My Import Zotero Note",
+      "outputPathTemplate": "{{citekey}}.md",
+      "imageOutputPathTemplate": "02-论文笔记/{{title}}.md",
+      "imageBaseNameTemplate": "02-论文笔记/images/",
+      "cslStyle": "IEEE"
+    }
+  ],
+  "citeSuggestTemplate": "[[{{citekey}}]]",
+  "openNoteAfterImport": true,
+  "whichNotesToOpenAfterImport": "first-imported-note",
+  "pdfExportImageOCR": true
+}
