@@ -39,6 +39,11 @@ AI 生成了一下，加入了一个专利的受理证明
 4. 第二代技术指标对比表格
 5. Profiling 结果的合理可视化
 ## 2. 准备 Group Meeting
+主题写 GPU 上的程序执行流程和 Nsight 系列工具好了
+1. GPU 上的程序执行流程
+2. Nsight 系列工具简介
+下周来讲实际操作例子。
+
 # 3.27（周四）
 ## 1. Group Meeting
 ## 2. Mix Render 相机模型
